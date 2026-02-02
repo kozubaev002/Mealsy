@@ -1,7 +1,9 @@
+import NewRecipes from '../components/newresepts/Nevresepts'
+
 export function Home() {
   return (
     <div >
-      Home
+      <NewRecipes />
     </div>
   )
 }
