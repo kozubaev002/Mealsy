@@ -1,17 +1,15 @@
 import { motion } from 'framer-motion'
 import React, { useState } from 'react'
-
-// Ассеты
-import saves from '../../../../assets/Component 3 (1).png'
-import favorites from '../../../../assets/heart.png'
-import blinchiki from '../../../../assets/image 10.png'
-import araxis from '../../../../assets/image 11.png'
-import chocolate from '../../../../assets/image 12 (1).png'
-import malinovye from '../../../../assets/image 13.png'
-import limon from '../../../../assets/image 14.png'
-import apple from '../../../../assets/image 8.png'
-import kokos from '../../../../assets/image 9.png'
-import vafli from '../../../../assets/waffle 1.png'
+import saves from '../../image/Component 3 (1).png'
+import favorites from '../../image/heart.png'
+import blinchiki from '../../image/image 10.png'
+import araxis from '../../image/image 11.png'
+import chocolate from '../../image/image 12 (1).png'
+import malinovye from '../../image/image 13.png'
+import limon from '../../image/image 14.png'
+import apple from '../../image/image 8.png'
+import kokos from '../../image/image 9.png'
+import vafli from '../../image/waffle 1.png'
 
 interface Recipe {
 	id: number
@@ -108,7 +106,6 @@ const RecipeCard: React.FC<{ recipe: Recipe }> = ({ recipe }) => {
 					className='w-full h-full object-cover'
 				/>
 
-				{/* Кнопка сохранения */}
 				<motion.button
 					whileHover={{ scale: 1.1 }}
 					whileTap={{ scale: 0.9 }}
@@ -129,7 +126,6 @@ const RecipeCard: React.FC<{ recipe: Recipe }> = ({ recipe }) => {
 					/>
 				</motion.button>
 
-				{/* Инфо-панель */}
 				<div className='absolute bottom-0 left-0 right-0 h-28 bg-gradient-to-t from-black/90 via-black/40 to-transparent flex items-end justify-between px-5 pb-5 pointer-events-none'>
 					<div className='flex items-center gap-2.5 pointer-events-auto'>
 						<motion.div
@@ -169,7 +165,6 @@ const RecipeCard: React.FC<{ recipe: Recipe }> = ({ recipe }) => {
 				</div>
 			</div>
 
-			{/* Заголовок: Теперь цвет меняется только при наведении на сам текст */}
 			<h3 className='inline-block text-[18px] font-bold leading-snug text-[#1A1A1A] hover:text-[#6FCF97] transition-colors duration-300 px-1 cursor-pointer w-fit'>
 				{recipe.title}
 			</h3>
