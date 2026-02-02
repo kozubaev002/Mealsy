@@ -98,11 +98,8 @@ const RecipeCard: React.FC<{ recipe: Recipe }> = ({ recipe }) => {
 	const [isSaved, setIsSaved] = useState(false)
 
 	return (
-		<motion.div
-			variants={itemVariants}
-			className='flex flex-col group cursor-pointer'
-		>
-			<div className='relative aspect-[3/4] rounded-3xl overflow-hidden mb-4 shadow-lg bg-gray-100'>
+		<motion.div variants={itemVariants} className='flex flex-col group'>
+			<div className='relative aspect-[3/4] rounded-3xl overflow-hidden mb-4 shadow-lg bg-gray-100 cursor-pointer'>
 				<motion.img
 					whileHover={{ scale: 1.1 }}
 					transition={{ duration: 0.6, ease: 'easeOut' }}
@@ -111,7 +108,7 @@ const RecipeCard: React.FC<{ recipe: Recipe }> = ({ recipe }) => {
 					className='w-full h-full object-cover'
 				/>
 
-				{/* Кнопка сохранения (Желтая) */}
+				{/* Кнопка сохранения */}
 				<motion.button
 					whileHover={{ scale: 1.1 }}
 					whileTap={{ scale: 0.9 }}
@@ -128,14 +125,13 @@ const RecipeCard: React.FC<{ recipe: Recipe }> = ({ recipe }) => {
 					<img
 						src={saves}
 						alt='save'
-						className={`w-5 h-5 transition-all ${isSaved ? 'brightness-110' : 'invert brightness-200'}`}
+						className={`w-5 h-5 transition-all cursor-pointer ${isSaved ? 'brightness-110' : 'invert brightness-200'}`}
 					/>
 				</motion.button>
 
 				{/* Инфо-панель */}
-				<div className='absolute bottom-0 left-0 right-0 h-28 bg-gradient-to-t from-black/90 via-black/40 to-transparent flex items-end justify-between px-5 pb-5'>
-					<div className='flex items-center gap-2.5'>
-						{/* СЕРДЕЧКО: Теперь работает как кнопка SAVE, но красная */}
+				<div className='absolute bottom-0 left-0 right-0 h-28 bg-gradient-to-t from-black/90 via-black/40 to-transparent flex items-end justify-between px-5 pb-5 pointer-events-none'>
+					<div className='flex items-center gap-2.5 pointer-events-auto'>
 						<motion.div
 							onClick={e => {
 								e.stopPropagation()
@@ -161,7 +157,7 @@ const RecipeCard: React.FC<{ recipe: Recipe }> = ({ recipe }) => {
 						</motion.div>
 
 						<span
-							className={`text-[15px] font-bold select-none ${isLiked ? 'text-red-400' : 'text-white'}`}
+							className={`text-[15px] font-bold select-none ${isLiked ? 'text-white' : 'text-gray-300'}`}
 						>
 							{isLiked ? recipe.likes + 1 : recipe.likes}
 						</span>
@@ -173,7 +169,8 @@ const RecipeCard: React.FC<{ recipe: Recipe }> = ({ recipe }) => {
 				</div>
 			</div>
 
-			<h3 className='text-[18px] font-bold leading-snug text-[#1A1A1A] group-hover:text-[#6FCF97] transition-colors duration-300 px-1'>
+			{/* Заголовок: Теперь цвет меняется только при наведении на сам текст */}
+			<h3 className='inline-block text-[18px] font-bold leading-snug text-[#1A1A1A] hover:text-[#6FCF97] transition-colors duration-300 px-1 cursor-pointer w-fit'>
 				{recipe.title}
 			</h3>
 		</motion.div>
@@ -217,7 +214,7 @@ const NewRecipes: React.FC = () => {
 					className='group relative flex items-center gap-4 bg-[#6FCF97] text-white font-black py-6 px-20 rounded-2xl transition-all overflow-hidden'
 				>
 					<div className='absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover:animate-[shimmer_2s_infinite]' />
-					<span className='relative z-10 text-xl uppercase tracking-widest'>
+					<span className='relative z-10 text-xl uppercase tracking-widest cursor-pointer'>
 						Смотреть все рецепты
 					</span>
 					<motion.div
