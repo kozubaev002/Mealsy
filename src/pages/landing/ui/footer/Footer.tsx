@@ -7,23 +7,19 @@ export function Footer() {
     <footer className="bg-[#E2F0D3] py-12 px-6 md:px-10 font-sans text-[#333333]">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-0">
         
-        {/* 1. Секция с логотипом */}
         <div className="md:col-span-3 flex justify-start items-start">
           <img src={logo} alt="Mealsy" className="h-10 object-contain" />
         </div>
 
-        {/* 2. Секция "Присоединяйтесь" */}
         <div className="md:col-span-3 md:border-l border-[#B2C2AD] md:pl-8 flex flex-col">
           <h3 className="text-xl font-bold mb-6">Присоединяйтесь</h3>
           
           <div className="mb-6">
             <p className="text-sm mb-3 text-[#4A5D45]">Наши социальные сети:</p>
             <div className="flex gap-2">
-              {/* Используем импортированное фото Telegram напрямую */}
               <a href="#" className="hover:opacity-80 transition-opacity">
                 <img src={zen} alt="Telegram" className="w-8 h-8 rounded" />
               </a>
-              {/* Здесь можно вставить вторую иконку по аналогии */}
               <a href="#" className="hover:opacity-80 transition-opacity ">
                 
                   <img src={tele} alt="Social" className="w-8 h-8" />
@@ -46,7 +42,6 @@ export function Footer() {
           </div>
         </div>
 
-        {/* 3. Секция "Находите" */}
         <div className="md:col-span-3 md:border-l border-[#B2C2AD] md:pl-10 flex flex-col">
           <h3 className="text-xl font-bold mb-6">Находите</h3>
           <ul className="space-y-4 text-sm text-[#4A5D45]">
@@ -57,7 +52,6 @@ export function Footer() {
           </ul>
         </div>
 
-        {/* 4. Секция "Обратная связь" */}
         <div className="md:col-span-3 md:border-l border-[#B2C2AD] md:pl-8 flex flex-col">
           <h3 className="text-xl font-bold mb-6">Обратная связь</h3>
           <p className="text-sm leading-relaxed text-[#4A5D45] mb-6">
