@@ -1,3 +1,4 @@
+import { Auth } from '../../auth/Auth'
 import { Contacts } from '../components/contacts/Contacts'
 import { Konstructor } from '../components/konstructor/Konstructor'
 import NewRecipes from '../components/newresepts/Nevresepts'
@@ -14,6 +15,7 @@ export function Home() {
       <PopularRsepts />
       <RecipeCatalog />
       <Contacts />
+      <Auth />
     </div>
   )
 }
